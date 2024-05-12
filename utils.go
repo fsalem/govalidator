@@ -54,6 +54,10 @@ func isEmpty(x interface{}) bool {
 		return rv.Len() == 0
 	case reflect.Bool:
 		return false
+	case reflect.Int64, reflect.Int8, reflect.Int16, reflect.Int:
+		return false
+	case reflect.Float64, reflect.Float32:
+		return false
 	}
 	return reflect.DeepEqual(x, reflect.Zero(rt).Interface())
 }
