@@ -9,7 +9,7 @@ import (
 // containsRequiredField check rules contain any required field
 func isContainRequiredField(rules []string) bool {
 	for _, rule := range rules {
-		if rule == "required" {
+		if rule == "required" || rule == "required_on_non_primitive" {
 			return true
 		}
 	}
